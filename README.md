@@ -1,7 +1,7 @@
-Project Name: World's Hardest Game
+**Project Name:** World's Hardest Game
 
-Group Name: World's Hardest Group
+**Group Name:** World's Hardest Group
 
-Group Members: Aidan Wong, William Wang
+**Group Members:** Aidan Wong, William Wang
 
-Period: 1
+**Period:** 1
