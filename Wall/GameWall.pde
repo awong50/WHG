@@ -1,8 +1,26 @@
 class Wall {
   
-  private PVector position;
-  private PVector dimensions;
+  private PVector p1;
+  private PVector p2;
   
-  public Wall(int x, int
+  public Wall(int x1, int y1, int x2, int y2) {
+    size(800, 600);
+    p1 = new PVector(x1, y1);
+    p2 = new PVector(x2, y2);
+  }
+  
+  void draw() {
+    rect(p1.x, p1.y, p2.x, p2.y);
+  }
+  
+  public boolean collisionCheck(Player player) {
+    if (player.getPos().x == p1.x || player.getPos().x == p2.x) {
+      return true;
+    }
+    if (player.getPos().y == p1.y || player.getPos().y == p2.y) {
+      return true;
+    }
+    return false;
+  }
   
 }
