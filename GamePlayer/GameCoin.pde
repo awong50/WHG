@@ -2,12 +2,12 @@ class Coin {
   PVector position;
   PImage image;
   boolean collected;
-  float radius = 10;
+  float raddius = 10;
   
-  public Coin(float x, float y, PImage img) {
+  public Coin(float x, float y) {
     position = new PVector(x, y);
-    image = img;
     collected = false;
+    image = loadImage("coin.png");
   }
   
   void draw() {
@@ -16,6 +16,7 @@ class Coin {
     }
   }
   
+  
   void collect() {
     System.out.println("Coin collected at position: " + position);
     collected = true;
@@ -23,5 +24,13 @@ class Coin {
   
   boolean isCollected() {
     return collected;
+  }
+  
+  float getX() {
+    return position.x;
+  }
+  
+  float getY() {
+    return position.y;
   }
 }
