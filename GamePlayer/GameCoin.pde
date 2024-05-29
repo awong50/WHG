@@ -1,20 +1,20 @@
 class Coin {
   PVector position;
-  PImage image;
   boolean collected;
-  float radius = 10;
+  float diameter = 10;
   
-  public Coin(float x, float y, PImage img) {
+  public Coin(float x, float y) {
     position = new PVector(x, y);
-    image = img;
     collected = false;
   }
   
   void draw() {
     if (!isCollected()) {
-      image(image, position.x, position.y);
+      fill(255, 204, 0);
+      circle(position.x, position.y, diameter);
     }
   }
+  
   
   void collect() {
     System.out.println("Coin collected at position: " + position);
