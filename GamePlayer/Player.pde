@@ -7,7 +7,7 @@ class Player {
   Player(float x, float y, color col) {
     position = new PVector(x, y);
     coinCount = 0;
-    radius = 100;
+    radius = 20;
     this.col = col;
   }
   
@@ -22,7 +22,7 @@ class Player {
   
   void collectCoin(Coin coin) {
     System.out.println(dist(position.x, position.y, coin.position.x, coin.position.y));
-    if (!coin.isCollected() && dist(position.x, position.y, coin.getX(), coin.getY()) <= radius) {
+    if (!coin.isCollected() && (dist(position.x, position.y, coin.position.x, coin.position.y) <= radius) || dist(position.x + radius, position.y, coin.position.x, coin.position.y) <= radius) {
       coinCount++;
       coin.collect();
     }

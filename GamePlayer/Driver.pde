@@ -10,8 +10,9 @@ void setup() {
 void draw() {
   background(255);
   
-  player.draw();
   coin.draw();
+  player.draw();
+  
   
   if (keyPressed) {
     PVector direction = new PVector();
