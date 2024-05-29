@@ -20,7 +20,7 @@ class Obstacle {
   }
   
   public void resetPosition() {
-    currentPosition.mult(-1);
+    velocity.mult(-1);
   }
   
   public boolean collisionCheck(Player player) {
@@ -31,6 +31,10 @@ class Obstacle {
       return true;
     }
     return false;
+  }
+  
+  public PVector getPos() {
+    return currentPosition;
   }
   
 }
