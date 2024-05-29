@@ -17,29 +17,43 @@ class Button {
   }
   
   void draw() {
-    String[] shapes = new String[] {"r", "e"};
-    if (shape.equals(shapes[0])) {
-      color(backgroundColor);
-      rect(position.x, position.y, size.x, size.y);
+    if (shape.equals("r")) {
+      fill(backgroundColor);
+      rect(position.x, position.y, size.x, size.y, 10);
       textSize(12);
       fill(labelColor);
-      text(label, position.x, position.y, position.x + size.x, position.y + size.y);
+      text(label, position.x + size.x/2, position.y + size.y/2);
       textAlign(CENTER);
     }
-    if (shape.equals(shapes[1])) {
-      color(backgroundColor);
+    if (shape.equals("e")) {
+      fill(backgroundColor);
       ellipse(position.x, position.y, size.x, size.y);
       textSize(12);
       fill(labelColor);
-      text(label, position.x, position.y, position.x + size.x, position.y + size.y);
+      text(label, position.x, position.y);
       textAlign(CENTER);
     }
+
   }
   
   public boolean isMouseOver() {
-    if (mouseX == 1) {
-    return true;
+    if (shape.equals("r")) {
+      if ((mouseX <= position.x + size.x && position.x <= mouseX) && (mouseY >= position.y && position.y + size.y >= mouseY)) {
+        return true;
+      }
+    }
+    if (shape.equals("e")) {
+      if ((mouseX <= position.x + size.x && mouseX >= position.x - size.x) && (mouseY <= position.y + size.y && mouseY >= position.y - size.y)) {
+        return true;
+      }
+    }
+    return false;
   }
+  
+  public boolean isMouseClicked() {
+    if (mouseButton == LEFT) {
+      return true;
+    }
     return false;
   }
   
