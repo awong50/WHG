@@ -20,6 +20,10 @@ class Player {
     position.add(direction);
   }
   
+  PVector getPos() {
+    return position;
+  }
+  
   void collectCoin(Coin coin) {
     if (!coin.isCollected() && dist(position.x, position.y, coin.position.x, coin.position.y) < radius + coin.radius) {
       coinCount++;
