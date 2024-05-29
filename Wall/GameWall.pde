@@ -14,10 +14,10 @@ class Wall {
   }
   
   public boolean collisionCheck(Player player) {
-    if (player.getPos().x == p1.x || player.getPos().x == p2.x) {
+    if (player.getPos().x <= p1.x || player.getPos().x >= p2.x) {
       return true;
     }
-    if (player.getPos().y == p1.y || player.getPos().y == p2.y) {
+    if (player.getPos().y <= p1.y || player.getPos().y >= p2.y) {
       return true;
     }
     return false;
