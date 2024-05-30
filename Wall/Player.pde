@@ -7,7 +7,7 @@ class Player {
   Player(float x, float y, color col) {
     position = new PVector(x, y);
     coinCount = 0;
-    radius = 10;
+    radius = 20;
     this.col = col;
   }
   
