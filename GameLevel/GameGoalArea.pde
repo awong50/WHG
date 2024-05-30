@@ -5,7 +5,6 @@ class GoalArea {
   boolean isActive;
   color fillColor;
 
-  // Constructor to initialize the goal area's position, size, and active state
   GoalArea(float x, float y, float w, float h, color col) {
     position = new PVector(x, y);
     width = w;

@@ -27,5 +27,11 @@ class Player {
       coin.collect();
     }
   }
+  
+  void resetPosition(float x, float y) {
+    position.set(x, y);
+  }
+  
+  
 }
     
