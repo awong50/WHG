@@ -12,7 +12,7 @@ class Obstacle {
   
   void draw() {
     color(0, 0, 255);
-    circle(currentPosition.x, currentPosition.y, 5);
+    circle(currentPosition.x, currentPosition.y, 20);
   }
   
   public void move() {
@@ -24,13 +24,10 @@ class Obstacle {
   }
   
   public boolean collisionCheck(Player player) {
-    if (player.getPos().x + 2.5 == currentPosition.x || player.getPos().x - 2.5 == currentPosition.x) {
-      return true;
-    }
-    if (player.getPos().y + 2.5 == currentPosition.x || player.getPos().y - 2.5 == currentPosition.x) {
-      return true;
-    }
-    return false;
+    boolean xTouch = player.position.x + 20 >= currentPosition.x - 10 && player.position.x <= currentPosition.x + 10;
+    boolean yTouch = player.position.y + 20 >= currentPosition.y - 10 && player.position.y + 20 <= currentPosition.y + 10;
+
+    return xTouch && yTouch;
   }
   
   public PVector getPos() {
