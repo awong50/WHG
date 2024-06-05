@@ -3,6 +3,7 @@ class GoalArea {
   float width;
   float height;
   boolean isActive;
+  boolean allCoinsCollected;
   color fillColor;
 
   GoalArea(float x, float y, float w, float h, color col) {
@@ -11,6 +12,7 @@ class GoalArea {
     height = h;
     isActive = true;  
     fillColor = col;
+    allCoinsCollected = false;
   }
 
   void draw() {
@@ -38,5 +40,9 @@ class GoalArea {
       return true;
     }
     return false;
+  }
+  
+  void setCoinsCollected(boolean coins) {
+    allCoinsCollected = coins;
   }
 }

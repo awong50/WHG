@@ -32,6 +32,43 @@ class Player {
     position.set(x, y);
   }
   
-  
+  PVector wallCollision(Wall wall) {
+    PVector direction = new PVector(0, 0);
+    if (keyPressed) {
+      if (wall.collisionCheck(this)) {
+        if (this.position.x == wall.getP(1).x) {
+          if (key == 'w') direction.y += -2;
+          if (key == 's') direction.y += 2;
+          if (key == 'a') direction.x += 0;
+          if (key == 'd') direction.x += 2;
+        }
+        if (player.position.x + 20 == wall.getP(1).x + wall.getP(2).x) {
+          if (key == 'w') direction.y += -2;
+          if (key == 's') direction.y += 2;
+          if (key == 'a') direction.x += -2;
+          if (key == 'd') direction.x += 0;
+        }
+        if (player.position.y == wall.getP(1).y) {
+          if (key == 'w') direction.y += 0;
+          if (key == 's') direction.y += 2;
+          if (key == 'a') direction.x += -2;
+          if (key == 'd') direction.x += 2;
+        }
+        if (player.position.y + 20 == wall.getP(1).y + wall.getP(2).y) {
+          if (key == 'w') direction.y += -2;
+          if (key == 's') direction.y += 0;
+          if (key == 'a') direction.x += -2;
+          if (key == 'd') direction.x += 2;
+        }
+      }
+      else {
+        if (key == 'w') direction.y += -2;
+        if (key == 's') direction.y += 2;
+        if (key == 'a') direction.x += -2;
+        if (key == 'd') direction.x += 2;
+      }
+    }
+    return direction;
+  }  
 }
     
