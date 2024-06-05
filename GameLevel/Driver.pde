@@ -11,7 +11,7 @@ void setup() {
   coins.add(new Coin(300, 200));
   
   walls.add(new Wall(10, 10, 500, 500));
-  goalArea = new GoalArea(700, 500, 100, 100, color(0, 255, 0));
+  goalArea = new GoalArea(400, 200, 100, 100, color(0, 255, 0));
   
   level = new Level(1, player, goalArea, coins, walls);
   level.load();
