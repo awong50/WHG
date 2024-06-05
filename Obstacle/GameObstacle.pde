@@ -19,8 +19,8 @@ class Obstacle {
     currentPosition.add(velocity);
   }
   
-  public void resetPosition() {
-    velocity.mult(-1);
+  public void resetPosition(PVector coord) {
+    if (currentPosition.x == coord.x && currentPosition.y == coord.y) velocity.mult(-1);
   }
   
   public boolean collisionCheck(Player player) {
