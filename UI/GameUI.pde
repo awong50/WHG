@@ -5,10 +5,29 @@ class UI {
   ResetLevel r = new ResetLevel();
   Settings s = new Settings();
   
-  UI() {}
+  UI() {
+    l.levelButtons[0] = new Button(new PVector(50, 50), new PVector(100, 100), "Level 1", "r", color(255), color(0));
+  }
   
   void showMainMenu() {
-    MainMenu.display();
+    m.display();
+  }
+  
+  void showLevelSelect() {
+
+    l.display();
+  }
+  
+  void showResetScreen() {
+    r.display();
+  }
+  
+  void showSettings() {
+    s.display();
+  }
+  
+  void draw() {
+    if (showMainMenu) showMainMenu();
   }
   
 }

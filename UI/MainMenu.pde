@@ -17,15 +17,17 @@ class MainMenu {
     startButton.draw();
     exitButton.draw();
   }
+  
+  boolean status(Button b) {
+    return b.isMouseClicked();
+  }
 
   void handleMouseClick() {
-    if (startButton.isMouseClicked()) {
-      println("Start button clicked!");
+    if (status(startButton)) {
       showMainMenu = false;
     }
 
-    if (exitButton.isMouseClicked()) {
-      println("Exit button clicked!");
+    if (status(exitButton)) {
       exit();
     }
   }

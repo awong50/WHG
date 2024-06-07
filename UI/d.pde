@@ -1,10 +1,4 @@
-MainMenu mainMenu;
-boolean showMainMenu = true;
-
-void setup() {
-  size(800, 600);
-  mainMenu = new MainMenu();
-}
+/*
 
 void draw() {
   if (showMainMenu) {
@@ -19,4 +13,19 @@ void mousePressed() {
   if (showMainMenu) {
     mainMenu.handleMouseClick();
   }
+}*/
+
+UI u;
+boolean showMainMenu = false;
+boolean showLevelSelect = false;
+boolean showResetLevel = false;
+boolean showSettings = false;
+
+void setup() {
+  size(800, 600);
+  u = new UI();
+}
+
+void draw() {
+  u.draw();
 }

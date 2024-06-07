@@ -3,7 +3,7 @@ class LevelSelect {
   Button[] levelButtons;
   
   public LevelSelect() {
-    levelButtons = new Button[2];
+    levelButtons = new Button[1];
   }
   
   void display() {
@@ -13,7 +13,7 @@ class LevelSelect {
   }
   
   boolean status(Button b) {
-    return b.isMouseOver() && b.isMouseClicked();
+    return b.isMouseClicked();
   }
   
 }
