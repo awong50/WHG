@@ -9,8 +9,5 @@ void draw() {
   background(255);
   game.update();
   game.draw();
-}
-
-void keyPressed() {
-  game.keyPressed();
+  
 }

@@ -40,10 +40,14 @@ class Level {
   
   void draw() {
     goalArea.draw();
+    for (Wall wall: walls) {
+      player.wallCollision(wall);
+    }
     player.draw();
     for (Coin coin: coins) {
       coin.draw();
     }
+    
   }
 }
 
