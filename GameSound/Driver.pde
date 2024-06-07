@@ -1,11 +1,16 @@
+import ddf.minim.*;
+
 SoundManager soundManager;
-Button playButton;
+Button playButton, stopButton;
+
+Minim minim;
 
 void setup() {
   size(800, 600);
   
-  soundManager = new SoundManager();
-  soundManager.addSoundEffect("AHHH", "help.mp3");  
+  minim = new Minim(this);
+  soundManager = new SoundManager(minim);
+  soundManager.addSoundEffect("AHHH", dataPath("haha.mp3"));  
 
   playButton = new Button(new PVector(width / 2 - 75, height / 2 - 30), new PVector(150, 60), "Play Sound", "r", color(0, 255, 0), color(0));
 }
@@ -17,7 +22,6 @@ void draw() {
   textSize(32);
   text("Sound Manager Test", width / 2, 100);
 
-  // Draw the button
   playButton.draw();
 }
 
@@ -35,4 +39,5 @@ void keyPressed() {
 
 void stop() {
   soundManager.closeAllSoundEffects();
+  minim.stop();
 }

@@ -1,14 +1,17 @@
 import java.util.HashMap;
+import ddf.minim.*;
 
 class SoundManager {
+  Minim minim;
   HashMap<String, SoundEffect> soundEffects;
 
-  SoundManager() {
+  SoundManager(Minim minim) {
+    this.minim = minim;
     soundEffects = new HashMap<String, SoundEffect>();
   }
 
   void addSoundEffect(String name, String filePath) {
-    soundEffects.put(name, new SoundEffect(filePath));
+    soundEffects.put(name, new SoundEffect(minim, filePath));
   }
 
   void playSoundEffect(String name) {

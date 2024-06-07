@@ -5,26 +5,34 @@ class SoundEffect {
   AudioPlayer player;
   String filePath;
 
-  SoundEffect(String filePath) {
+  SoundEffect(Minim minim, String filePath) {
     this.filePath = filePath;
-    minim = new Minim(this);
+    this.minim = minim;
     player = minim.loadFile(filePath);
+    if (player == null) {
+      println("Error loading sound file: " + filePath);
+    }
   }
 
   void play() {
-    if (player.isPlaying()) {
-      player.rewind();
+    if (player != null) {
+      if (player.isPlaying()) {
+        player.rewind();
+      }
+      player.play();
     }
-    player.play();
   }
 
   void stop() {
-    player.pause();
-    player.rewind();
+    if (player != null) {
+      player.pause();
+      player.rewind();
+    }
   }
 
   void close() {
-    player.close();
-    minim.stop();
+    if (player != null) {
+      player.close();
+    }
   }
 }
