@@ -21,7 +21,7 @@ class MainMenu {
   void handleMouseClick() {
     if (startButton.isMouseClicked()) {
       println("Start button clicked!");
-      //showMainMenu = false;
+      showMainMenu = false;
     }
 
     if (exitButton.isMouseClicked()) {

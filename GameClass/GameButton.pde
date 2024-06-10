@@ -17,20 +17,21 @@ class Button {
   }
   
   void draw() {
-    fill(backgroundColor);
     textAlign(CENTER, CENTER);
     textSize(12);
-    fill(labelColor);
-    
+
     if (shape.equals("r")) {
+      fill(backgroundColor);
       rect(position.x, position.y, size.x, size.y, 10);
+      fill(labelColor);
       text(label, position.x + size.x / 2, position.y + size.y / 2);
     } else if (shape.equals("e")) {
+      fill(backgroundColor);
       ellipse(position.x, position.y, size.x, size.y);
+      fill(labelColor);
       text(label, position.x, position.y);
     }
   }
-  
   public boolean isMouseOver() {
     if (shape.equals("r")) {
       return (mouseX >= position.x && mouseX <= position.x + size.x && mouseY >= position.y && mouseY <= position.y + size.y);

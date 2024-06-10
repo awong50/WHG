@@ -1,11 +1,13 @@
 class Player {
   PVector position;
+  PVector velocity;
   int coinCount;
   float radius;
   color col;
   
   Player(float x, float y, color col) {
     position = new PVector(x, y);
+    velocity = new PVector(0, 0);
     coinCount = 0;
     radius = 20;
     this.col = col;
@@ -17,12 +19,34 @@ class Player {
   }
   
   void move(PVector direction) {
-    position.add(direction);
+    velocity = direction;
+  }
+  
+  void update(ArrayList<Wall> walls) {
+    PVector futurePosition = PVector.add(position, velocity);
+
+    boolean canMoveX = true;
+    boolean canMoveY = true;
+
+    for (Wall wall : walls) {
+      if (wall.collisionCheck(new PVector(futurePosition.x, position.y), radius)) {
+        canMoveX = false;
+      }
+      if (wall.collisionCheck(new PVector(position.x, futurePosition.y), radius)) {
+        canMoveY = false;
+      }
+    }
+    
+    if (canMoveX) {
+      position.x += velocity.x;
+    }
+    if (canMoveY) {
+      position.y += velocity.y;
+    }
   }
   
   void collectCoin(Coin coin) {
-    System.out.println(dist(position.x, position.y, coin.position.x, coin.position.y));
-    if (!coin.isCollected() && (dist(position.x, position.y, coin.position.x, coin.position.y) <= radius) || dist(position.x + radius, position.y, coin.position.x, coin.position.y) <= radius) {
+    if (!coin.isCollected() && dist(position.x, position.y, coin.position.x, coin.position.y) <= radius) {
       coinCount++;
       coin.collect();
     }
@@ -31,44 +55,8 @@ class Player {
   void resetPosition(float x, float y) {
     position.set(x, y);
   }
-  
-  PVector wallCollision(Wall wall) {
-    PVector direction = new PVector(0, 0);
-    if (keyPressed) {
-      if (wall.collisionCheck(this)) {
-        if (position.x == wall.getP(1).x) {
-          if (key == 'w') direction.y += -2;
-          if (key == 's') direction.y += 2;
-          if (key == 'a') direction.x += 0;
-          if (key == 'd') direction.x += 2;
-        }
-        if (position.x + 20 == wall.getP(1).x + wall.getP(2).x) {
-          if (key == 'w') direction.y += -2;
-          if (key == 's') direction.y += 2;
-          if (key == 'a') direction.x += -2;
-          if (key == 'd') direction.x += 0;
-        }
-        if (position.y == wall.getP(1).y) {
-          if (key == 'w') direction.y += 0;
-          if (key == 's') direction.y += 2;
-          if (key == 'a') direction.x += -2;
-          if (key == 'd') direction.x += 2;
-        }
-        if (position.y + 20 == wall.getP(1).y + wall.getP(2).y) {
-          if (key == 'w') direction.y += -2;
-          if (key == 's') direction.y += 0;
-          if (key == 'a') direction.x += -2;
-          if (key == 'd') direction.x += 2;
-        }
-      }
-      else {
-        if (key == 'w') direction.y += -2;
-        if (key == 's') direction.y += 2;
-        if (key == 'a') direction.x += -2;
-        if (key == 'd') direction.x += 2;
-      }
-    }
-    return direction;
-  }  
+
+  void stop() {
+    velocity.set(0, 0);
+  }
 }
-    

@@ -18,19 +18,20 @@ class Level {
   }
   
   void update() {
-    for (Coin coin: coins) {
+    player.update(walls); 
+
+    for (Coin coin : coins) {
       player.collectCoin(coin);
     }
-    for (Wall wall: walls) {
-      wall.draw();
-    }
+    
     if (player.coinCount == coins.size()) {
       goalArea.setCoinsCollected(true);
     }
     
     if (goalArea.collisionCheck(player) && goalArea.allCoinsCollected) {
-      System.out.println("Goal Reached");
+      println("Goal Reached");
       goalArea.deactivate();
+      showMainMenu = true;
     }
   }
   
@@ -40,18 +41,12 @@ class Level {
   
   void draw() {
     goalArea.draw();
-    for (Wall wall: walls) {
-      player.wallCollision(wall);
-    }
     player.draw();
-    for (Coin coin: coins) {
+    for (Wall wall : walls) {
+      wall.draw();
+    }
+    for (Coin coin : coins) {
       coin.draw();
     }
-    
   }
 }
-
-    
-    
-  
-  
