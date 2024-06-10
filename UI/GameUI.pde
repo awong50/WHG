@@ -10,24 +10,33 @@ class UI {
   }
   
   void showMainMenu() {
-    m.display();
+    if (showMainMenu) {
+      m.display();
+      s.display();
+      m.handleMouseClick();
+      s.handleMouseClicked();
+    }
+    else {
+      exit();
+    }
   }
   
   void showLevelSelect() {
-
-    l.display();
+    if (showLevelSelect) {
+      l.display();
+      l.handleMouseClick();
+    }
   }
   
-  void showResetScreen() {
-    r.display();
+  void showResetLevel() {
+    if (showResetLevel) {
+      r.display();
+      r.handleMouseClick();
+    }
   }
   
   void showSettings() {
     s.display();
-  }
-  
-  void draw() {
-    if (showMainMenu) showMainMenu();
   }
   
 }

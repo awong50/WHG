@@ -18,4 +18,17 @@ class ResetLevel {
     return b.isMouseClicked();
   }
   
+  void handleMouseClick() {
+    if (status(exitButton)) {
+      background(255);
+      showResetLevel = false;
+      showLevelSelect = true;
+    }
+    if (status(resetButton)) {
+      background(255);
+      showResetLevel = false;
+      showLevelSelect = true;
+    }
+  }
+  
 }

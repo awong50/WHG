@@ -1,31 +1,29 @@
-/*
-
-void draw() {
-  if (showMainMenu) {
-    mainMenu.display();
-  } else {
-    background(255);
-    text("Game would go here", 100, 100);
-  }
-}
-
-void mousePressed() {
-  if (showMainMenu) {
-    mainMenu.handleMouseClick();
-  }
-}*/
-
 UI u;
-boolean showMainMenu = false;
-boolean showLevelSelect = false;
-boolean showResetLevel = false;
-boolean showSettings = false;
+boolean showMainMenu;
+boolean showLevelSelect;
+boolean showResetLevel;
+boolean showSettings;
 
 void setup() {
   size(800, 600);
   u = new UI();
+  showMainMenu = true;
+  showLevelSelect = false;
+  showResetLevel = false;
+  showSettings = false;
 }
 
 void draw() {
-  u.draw();
+  if (showMainMenu) {
+    u.showMainMenu();
+  }
+  else if (showLevelSelect) {
+    background(255);
+    u.showLevelSelect();
+  }
+  else if (showResetLevel) {
+    background(255);
+    u.showResetLevel();
+  }
+  else background(255);
 }
