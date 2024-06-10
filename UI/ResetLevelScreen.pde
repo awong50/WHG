@@ -9,13 +9,26 @@ class ResetLevel {
     exitButton = new Button(new PVector(10, 200), new PVector(100, 50), "Exit?", "r", white, black);
   }
   
-  void draw() {
+  void display() {
     resetButton.draw();
     exitButton.draw();
   }
   
-  boolean display(Button b) {
-    return b.isMouseOver() && b.isMouseClicked();
+  boolean status(Button b) {
+    return b.isMouseClicked();
+  }
+  
+  void handleMouseClick() {
+    if (status(exitButton)) {
+      background(255);
+      showResetLevel = false;
+      showLevelSelect = true;
+    }
+    if (status(resetButton)) {
+      background(255);
+      showResetLevel = false;
+      showLevelSelect = true;
+    }
   }
   
 }

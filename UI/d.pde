@@ -1,22 +1,29 @@
-MainMenu mainMenu;
-boolean showMainMenu = true;
+UI u;
+boolean showMainMenu;
+boolean showLevelSelect;
+boolean showResetLevel;
+boolean showSettings;
 
 void setup() {
   size(800, 600);
-  mainMenu = new MainMenu();
+  u = new UI();
+  showMainMenu = true;
+  showLevelSelect = false;
+  showResetLevel = false;
+  showSettings = false;
 }
 
 void draw() {
   if (showMainMenu) {
-    mainMenu.display();
-  } else {
+    u.showMainMenu();
+  }
+  else if (showLevelSelect) {
     background(255);
-    text("Game would go here", 100, 100);
+    u.showLevelSelect();
   }
-}
-
-void mousePressed() {
-  if (showMainMenu) {
-    mainMenu.handleMouseClick();
+  else if (showResetLevel) {
+    background(255);
+    u.showResetLevel();
   }
+  else background(255);
 }
