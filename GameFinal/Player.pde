@@ -1,4 +1,5 @@
 class Player {
+  PVector start;
   PVector position;
   PVector velocity;
   int coinCount;
@@ -6,6 +7,7 @@ class Player {
   color col;
   
   Player(float x, float y, color col) {
+    start = new PVector(x, y);
     position = new PVector(x, y);
     velocity = new PVector(0, 0);
     coinCount = 0;

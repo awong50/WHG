@@ -16,7 +16,7 @@ class Level {
   }
 
   void load() {
-    player.resetPosition(50, 50);
+    player.resetPosition(player.start.x, player.start.y);
   }
 
   void update() {
@@ -31,7 +31,7 @@ class Level {
       if (obstacle.collisionCheck(player)) {
         println("Player hit an obstacle!");
         // Handle what happens when player hits an obstacle (e.g., reset player position)
-        player.resetPosition(50, 50);
+        player.resetPosition(player.start.x, player.start.y);
       }
     }
 

@@ -17,6 +17,7 @@ void setup() {
 }
 
 void draw() {
+  System.out.println("MouseX: " + mouseX + " | MouseY: " + mouseY);
   if (showMainMenu) {
     ui.showMainMenu();
   }
