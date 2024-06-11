@@ -10,6 +10,7 @@ class ResetLevel {
   void display() {
     resetButton.draw();
     backButton.draw();
+    backButton.draw();
   }
   
   boolean status(Button b) {
@@ -17,6 +18,7 @@ class ResetLevel {
   }
   
   void handleMouseClick() {
+    if (status(backButton)) {
     if (status(backButton)) {
       background(255);
       showResetLevel = false;

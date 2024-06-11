@@ -1,6 +1,5 @@
 class LevelSelect {
   Button back;
-  Button reset;
   Button[] levelButtons;
 
   public LevelSelect() {
@@ -39,11 +38,6 @@ class LevelSelect {
       background(255);
       showLevelSelect = false;
       showMainMenu = true;
-    }
-    if (status(reset)) {
-      background(255);
-      showLevelSelect = false;
-      showResetLevel = true;
     }
     for (int i = 0; i < levelButtons.length; i++) {
       if (status(levelButtons[i])) {
