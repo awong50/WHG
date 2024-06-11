@@ -43,17 +43,3 @@ void mousePressed() {
   if (showSettings) ui.settings.handleMouseClick();
   if (showCredits) ui.credits.handleMouseClick();
 }
-
-/* misc for now
-void keyPressed() {
-  if (!showMainMenu) {
-    game.keyPressed();
-  }
-}
-
-void keyReleased() {
-  if (!showMainMenu) {
-    game.keyReleased();
-  }
-}
-*/
