@@ -4,13 +4,16 @@ class LevelSelect {
   Button[] levelButtons;
 
   public LevelSelect() {
-    levelButtons = new Button[2]; // Adjust size for two levels
+    levelButtons = new Button[5]; // Adjust size for two levels
     reset = new Button(new PVector(width - 100, height - 50), new PVector(100, 50), "Reset?", "r", color(255), color(0));
     back = new Button(new PVector(10, 10), new PVector(150, 60), "Back", "r", color(255), color(0));
     
     // Initialize Level Buttons
     levelButtons[0] = new Button(new PVector(50, 50), new PVector(100, 100), "Level 1", "r", color(255), color(0));
     levelButtons[1] = new Button(new PVector(200, 50), new PVector(100, 100), "Level 2", "r", color(255), color(0));
+    levelButtons[2] = new Button(new PVector(350, 50), new PVector(100, 100), "Level 3", "r", color(255), color(0));
+    levelButtons[3] = new Button(new PVector(500, 50), new PVector(100, 100), "Level 4", "r", color(255), color(0));
+    levelButtons[4] = new Button(new PVector(650, 50), new PVector(100, 100), "Level 5", "r", color(255), color(0));
   }
 
   void display() {

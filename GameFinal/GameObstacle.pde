@@ -4,14 +4,14 @@ class Obstacle {
   private float leftBound, rightBound, topBound, bottomBound;
   private float radius;
 
-  public Obstacle(PVector v, int x, int y, float leftBound, float rightBound, float topBound, float bottomBound) {
+  public Obstacle(PVector v, int x, int y, float leftBound, float rightBound, float topBound, float bottomBound, int r) {
     currentPosition = new PVector(x, y);
     velocity = v;
     this.leftBound = leftBound;
     this.rightBound = rightBound;
     this.topBound = topBound;
     this.bottomBound = bottomBound;
-    radius = 10; // Adjust the radius as needed
+    radius = r; // Adjust the radius as needed
   }
 
   void draw() {

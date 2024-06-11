@@ -6,8 +6,8 @@ class LevelSelect {
   
   public LevelSelect() {
     levelButtons = new Button[1];
-    reset = new Button(new PVector(width - 100, height - 50), new PVector(100, 50), "Reset?", "r", color(255), color(0));
-    back = new Button(new PVector(0, height - 60), new PVector(150, 60), "Back", "r", color(255), color(0));
+    reset = new Button(new PVector(width - 60, height - 60), new PVector(60, 60), "Reset", "r", color(232, 222, 255), color(0));
+    back = new Button(new PVector(0, height - 60), new PVector(60, 60), "Back", "r", color(119, 221, 119), color(0));
   }
   
   void display() {

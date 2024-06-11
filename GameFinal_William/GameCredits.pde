@@ -3,7 +3,7 @@ class Credits {
   Button backToMenu;
   
   Credits() {
-    backToMenu = new Button(new PVector(width - 150, height - 60), new PVector(150, 60), "Back", "r", color(255), color(0));
+    backToMenu = new Button(new PVector(width - 60, height - 60), new PVector(60, 60), "Back", "r", color(119, 221, 119), color(0));
   }
   
   void display() {
