@@ -24,4 +24,5 @@ class Coin {
   boolean isCollected() {
     return collected;
   }
+  
 }

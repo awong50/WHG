@@ -16,7 +16,7 @@ class Level {
   }
 
   void load() {
-    player.resetPosition(50, 50);
+    player.resetPosition(player.position.x, player.position.y);
   }
 
   void update() {
@@ -30,8 +30,7 @@ class Level {
       obstacle.move();
       if (obstacle.collisionCheck(player)) {
         println("Player hit an obstacle!");
-        // Handle what happens when player hits an obstacle (e.g., reset player position)
-        player.resetPosition(50, 50);
+        player.resetPosition(player.position.x, player.position.y);
       }
     }
 
@@ -42,7 +41,7 @@ class Level {
     if (goalArea.collisionCheck(player) && goalArea.allCoinsCollected) {
       println("Goal Reached");
       goalArea.deactivate();
-      showMainMenu = true;
+      showLevelSelect = true;
     }
   }
 
