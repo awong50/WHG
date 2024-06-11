@@ -1,17 +1,17 @@
 class ResetLevel {
   Button resetButton;
+  Button toLevelSelect;
   Button exitButton;
   
   public ResetLevel() {
-    color white = color(255, 255, 255);
-    color black = color(0, 0, 0);
-    resetButton = new Button(new PVector(10, 10), new PVector(200, 100), "Reset?", "r", white, black);
-    exitButton = new Button(new PVector(10, 200), new PVector(100, 50), "Exit?", "r", white, black);
+    resetButton = new Button(new PVector(350, 200), new PVector(100, 100), "Reset", "r", color(232, 222, 255), color(0));
+    //toLevelSelect = new Button(new PVector(width / 2 - 50, height / 2 - 100), new PVector(100, 100), "Reset", "r", color(232, 222, 255), color(0));
+    exitButton = new Button(new PVector(width / 2 - 25, height / 2 + 25), new PVector(50, 50), "Back", "r", color(119, 221, 119), color(0));
   }
   
   void display() {
     resetButton.draw();
-    exitButton.draw();
+    backButton.draw();
   }
   
   boolean status(Button b) {
@@ -19,7 +19,7 @@ class ResetLevel {
   }
   
   void handleMouseClick() {
-    if (status(exitButton)) {
+    if (status(backButton)) {
       background(255);
       showResetLevel = false;
       showLevelSelect = true;
