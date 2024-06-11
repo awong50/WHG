@@ -112,7 +112,7 @@ class Game {
     obstacles3.add(new Obstacle(new PVector(-2, 0), 655, 255, 50, 670, 114, 366, 15));
     obstacles3.add(new Obstacle(new PVector(2, 0), 65, 215, 50, 670, 0, 0, 15));
     // Vertical Obstacles
-    obstacles3.add(new Obstacle(new PVector(0, 2), 65, 215, 0, 0, 195, 395, 15));
+    /*obstacles3.add(new Obstacle(new PVector(0, 2), 65, 215, 0, 0, 195, 395, 15));
     obstacles3.add(new Obstacle(new PVector(0, -2), 105, 375, 0, 0, 195, 395, 15));
     obstacles3.add(new Obstacle(new PVector(0, 2), 145, 215, 0, 0, 195, 395, 15));
     obstacles3.add(new Obstacle(new PVector(0, -2), 185, 375, 0, 0, 195, 395, 15));
@@ -126,7 +126,7 @@ class Game {
     obstacles3.add(new Obstacle(new PVector(0, -2), 505, 375, 0, 0, 195, 395, 15));
     obstacles3.add(new Obstacle(new PVector(0, 2), 545, 215, 0, 0, 195, 395, 15));
     obstacles3.add(new Obstacle(new PVector(0, -2), 595, 375, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, 2), 635, 215, 0, 0, 195, 395, 15));
+    obstacles3.add(new Obstacle(new PVector(0, 2), 635, 215, 0, 0, 195, 395, 15));*/
     Level level3 = new Level(3, player3, goalArea3, coins3, walls3, obstacles3);
     levels.add(level3);
     

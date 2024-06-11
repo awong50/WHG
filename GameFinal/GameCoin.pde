@@ -1,3 +1,8 @@
+import ddf.minim.*;
+
+Minim minim = new Minim(this);
+SoundManager soundManager = new SoundManager(minim);
+
 class Coin {
   PVector position;
   boolean collected;
@@ -6,6 +11,7 @@ class Coin {
   public Coin(float x, float y) {
     position = new PVector(x, y);
     collected = false;
+    soundManager.addSoundEffect("AHHH", dataPath("haha.mp3"));  
   }
   
   void draw() {
@@ -18,6 +24,7 @@ class Coin {
   
   void collect() {
     System.out.println("Coin collected at position: " + position);
+    soundManager.playSoundEffect("AHHH");
     collected = true;
   }
   
