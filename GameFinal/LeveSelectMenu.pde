@@ -4,7 +4,6 @@ class LevelSelect {
 
   public LevelSelect() {
     levelButtons = new Button[5];
-    reset = new Button(new PVector(width - 60, height - 60), new PVector(60, 60), "Reset", "r", color(232, 222, 255), color(0));
     back = new Button(new PVector(0, height - 60), new PVector(60, 60), "Back", "r", color(119, 221, 119), color(0));
     
     // Level Buttons
@@ -17,7 +16,6 @@ class LevelSelect {
 
   void display() {
     back.draw();
-    reset.draw();
     for (int i = 0; i < levelButtons.length; i++) {
       // Change button color based on completion status
       if (game.levels.get(i).isCompleted()) {

@@ -64,4 +64,5 @@ void mousePressed() {
   if (showResetLevel) ui.resetLevel.handleMouseClick();
   if (showSettings) ui.settings.handleMouseClick();
   if (showCredits) ui.credits.handleMouseClick();
+  if (showGame) game.handleMouseClick();
 }
