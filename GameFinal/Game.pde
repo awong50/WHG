@@ -8,6 +8,7 @@ class Game {
   Game() {
     levels = new ArrayList<Level>();
     player1 = new Player(85, 345, color(255, 0, 0));
+    soundManager.addSoundEffect("background", dataPath("background.mp3"));  
 
     // Level 1
     ArrayList<Coin> coins1 = new ArrayList<Coin>();
@@ -238,6 +239,7 @@ class Game {
 
   void loadLevel(int level) {
     levels.get(level - 1).load();
+    soundManager.playSoundEffect("background");
   }
 
   void update(int level) {

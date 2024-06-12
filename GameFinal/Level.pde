@@ -12,11 +12,12 @@ class Level {
     this.coins = coins;
     this.goalArea = goalArea;
     this.walls = walls;
-    this.obstacles = obstacles; // Initialize obstacles
+    this.obstacles = obstacles; 
+    soundManager.addSoundEffect("completeLevel", dataPath("completeLevel.mp3"));  
   }
 
   void load() {
-    player.resetPosition(player.start.x, player.start.y);
+    player.reset(player.start.x, player.start.y);
   }
 
   void update() {
@@ -24,14 +25,17 @@ class Level {
 
     for (Coin coin : coins) {
       player.collectCoin(coin);
+      
     }
 
     for (Obstacle obstacle : obstacles) {
       obstacle.move();
       if (obstacle.collisionCheck(player)) {
         println("Player hit an obstacle!");
-        // Handle what happens when player hits an obstacle (e.g., reset player position)
-        player.resetPosition(player.start.x, player.start.y);
+        player.reset(player.start.x, player.start.y);
+        for (Coin coin: coins) {
+          coin.reset();
+        }
       }
     }
 
@@ -41,8 +45,10 @@ class Level {
 
     if (goalArea.collisionCheck(player) && goalArea.allCoinsCollected) {
       println("Goal Reached");
+      soundManager.playSoundEffect("completeLevel");
+      soundManager.pauseSoundEffect("background");
       goalArea.deactivate();
-      showLevelSelect = true;
+      showLevelSelect = true; 
     }
   }
 

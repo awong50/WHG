@@ -1,38 +1,44 @@
+import java.util.HashMap;
 import ddf.minim.*;
 
 class SoundEffect {
-  Minim minim;
   AudioPlayer player;
-  String filePath;
+  boolean isPaused;
+  int pausePosition;
 
   SoundEffect(Minim minim, String filePath) {
-    this.filePath = filePath;
-    this.minim = minim;
     player = minim.loadFile(filePath);
-    if (player == null) {
-      println("Error loading sound file: " + filePath);
-    }
+    isPaused = false;
+    pausePosition = 0;
   }
 
   void play() {
-    if (player != null) {
-      if (player.isPlaying()) {
-        player.rewind();
-      }
+    if (isPaused) {
+      player.cue(pausePosition);
+      player.play();
+      isPaused = false;
+    } else {
+      player.rewind();
       player.play();
     }
   }
 
   void stop() {
-    if (player != null) {
+    player.pause();
+    player.rewind();
+    isPaused = false;
+    pausePosition = 0;
+  }
+
+  void pause() {
+    if (player.isPlaying()) {
+      pausePosition = player.position();
       player.pause();
-      player.rewind();
+      isPaused = true;
     }
   }
 
   void close() {
-    if (player != null) {
-      player.close();
-    }
+    player.close();
   }
 }
