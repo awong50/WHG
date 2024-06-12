@@ -4,7 +4,7 @@ class Level {
   ArrayList<Coin> coins;
   GoalArea goalArea;
   ArrayList<Wall> walls;
-  ArrayList<Obstacle> obstacles; // Add a list of obstacles
+  ArrayList<Obstacle> obstacles; // List of obstacles
 
   Level(int number, Player player, GoalArea goalArea, ArrayList<Coin> coins, ArrayList<Wall> walls, ArrayList<Obstacle> obstacles) {
     this.number = number;
@@ -29,7 +29,6 @@ class Level {
 
     for (Coin coin : coins) {
       player.collectCoin(coin);
-      
     }
 
     for (Obstacle obstacle : obstacles) {
@@ -47,7 +46,7 @@ class Level {
       goalArea.setCoinsCollected(true);
     }
 
-    if (goalArea.collisionCheck(player) && goalArea.allCoinsCollected) {
+    if (goalArea.allCoinsCollected && goalArea.collisionCheck(player)) {
       println("Goal Reached");
       soundManager.playSoundEffect("completeLevel");
       soundManager.pauseSoundEffect("background");
