@@ -3,7 +3,7 @@ class Game {
   ArrayList<Level> levels;
   boolean up, down, left, right; // Key presses
   Button reset;
-  Button levelSelect
+  Button levelSelect;
 
   Game() {
     levels = new ArrayList<Level>();
@@ -242,7 +242,7 @@ class Game {
 
   void update(int level) {
     PVector direction = new PVector(0, 0);
-    int v = 5;
+    int v = 1;
     if (up) {
       direction.y = -v;
     }

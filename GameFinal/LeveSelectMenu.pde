@@ -1,5 +1,5 @@
 class LevelSelect {
-  Button back;
+  Button back, reset;
   Button[] levelButtons;
 
   public LevelSelect() {
