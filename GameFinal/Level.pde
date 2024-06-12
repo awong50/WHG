@@ -18,6 +18,10 @@ class Level {
 
   void load() {
     player.reset(player.start.x, player.start.y);
+    for (Coin coin: coins) {
+      coin.reset();
+    }
+    goalArea.activate();
   }
 
   void update() {

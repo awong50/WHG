@@ -17,7 +17,6 @@ class LevelSelect {
   void display() {
     back.draw();
     for (int i = 0; i < levelButtons.length; i++) {
-      // Change button color based on completion status
       if (game.levels.get(i).isCompleted()) {
         levelButtons[i].setFillColor(color(0, 255, 0)); 
       } else {
@@ -41,8 +40,8 @@ class LevelSelect {
       if (status(levelButtons[i])) {
         showLevelSelect = false;
         showGame = true;
-        currentLevel = i + 1; // Set the current level to the selected level
-        game.loadLevel(currentLevel); // Load the selected level
+        currentLevel = i + 1; 
+        game.loadLevel(currentLevel); 
       }
     }
   }

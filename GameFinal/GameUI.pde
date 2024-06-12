@@ -21,18 +21,21 @@ class UI {
   void showLevelSelect() {
     if (showLevelSelect) {
       levelSelect.display();
+      soundManager.pauseSoundEffect("background");
     }
   }
   
   void showResetLevel() {
     if (showResetLevel) {
       resetLevel.display();
+      soundManager.pauseSoundEffect("background");
     }
   }
   
   void showSettings() {
     if (showSettings) {
       settings.display();
+      soundManager.pauseSoundEffect("background");
     }
   }
   

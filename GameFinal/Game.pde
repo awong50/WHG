@@ -2,11 +2,7 @@ class Game {
   Player player1, player2, player3, player4, player5;
   ArrayList<Level> levels;
   boolean up, down, left, right; // Key presses
-<<<<<<< HEAD
-  Button reset;
-=======
   Button pause;
->>>>>>> GameFINAL_ver
   Button levelSelect;
 
   Game() {
@@ -19,6 +15,7 @@ class Game {
 
     // Level 1
     ArrayList<Coin> coins1 = new ArrayList<Coin>();
+    coins1.add(new Coin(85, 375));
     GoalArea goalArea1 = new GoalArea(560, 50, 100, 360, color(0, 255, 0));
     ArrayList<Wall> walls1 = new ArrayList<Wall>();
     walls1.add(new Wall(50, 300, 140, 310));
@@ -283,6 +280,9 @@ class Game {
       background(255);
       showGame = false;
       showResetLevel = true;
+    }
+    else {
+      levels.get(currentLevel - 1).load();
     }
   }
 
