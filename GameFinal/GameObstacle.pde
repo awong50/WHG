@@ -4,14 +4,14 @@ class Obstacle {
   private float leftBound, rightBound, topBound, bottomBound;
   private float radius;
 
-  public Obstacle(PVector v, int x, int y, float leftBound, float rightBound, float topBound, float bottomBound, int r) {
+  public Obstacle(PVector v, int x, int y, float leftBound, float rightBound, float topBound, float bottomBound) {
     currentPosition = new PVector(x, y);
     velocity = v;
     this.leftBound = leftBound;
     this.rightBound = rightBound;
     this.topBound = topBound;
     this.bottomBound = bottomBound;
-    radius = r; // Adjust the radius as needed
+    radius = 15; // Adjust the radius as needed
   }
 
   void draw() {
@@ -34,8 +34,8 @@ class Obstacle {
   }
 
   boolean collisionCheck(Player player) {
-    float distance = dist(player.position.x, player.position.y, currentPosition.x, currentPosition.y);
-    return distance < player.radius + radius;
+    float distance = dist(player.position.x + 10, player.position.y + 10, currentPosition.x, currentPosition.y);
+    return distance < player.radius;
   }
 
   PVector getPos() {

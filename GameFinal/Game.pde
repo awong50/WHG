@@ -2,10 +2,13 @@ class Game {
   Player player1, player2, player3, player4, player5;
   ArrayList<Level> levels;
   boolean up, down, left, right; // Key presses
-  Button reset;
-  Button levelSelect
+  Button pause;
+  Button levelSelect;
 
   Game() {
+    pause = new Button(new PVector(width - 50, height - 50), new PVector(50, 50), "Pause", "r", color(164, 216, 216), color(0));
+    
+    int o = 3;
     levels = new ArrayList<Level>();
     player1 = new Player(85, 345, color(255, 0, 0));
 
@@ -28,13 +31,13 @@ class Game {
     walls1.add(new Wall(520, 260, 530, 500));
     walls1.add(new Wall(50, 500, 530, 510));
     ArrayList<Obstacle> obstacles1 = new ArrayList<Obstacle>();
-    obstacles1.add(new Obstacle(new PVector(2, 0), 230, 230, 210, 520, 0, 0, 15));
-    obstacles1.add(new Obstacle(new PVector(-2, 0), 500, 270, 210, 520, 0, 0, 15));
-    obstacles1.add(new Obstacle(new PVector(2, 0), 230, 310, 210, 520, 0, 0, 15));
-    obstacles1.add(new Obstacle(new PVector(-2, 0), 500, 350, 210, 520, 0, 0, 15));
-    obstacles1.add(new Obstacle(new PVector(2, 0), 230, 390, 210, 520, 0, 0, 15));
-    obstacles1.add(new Obstacle(new PVector(-2, 0), 500, 430, 210, 520, 0, 0, 15));
-    obstacles1.add(new Obstacle(new PVector(2, 0), 230, 470, 210, 520, 0, 0, 15));
+    obstacles1.add(new Obstacle(new PVector(o, 0), 230, 230, 210, 520, 0, 0));
+    obstacles1.add(new Obstacle(new PVector(-o, 0), 500, 270, 210, 520, 0, 0));
+    obstacles1.add(new Obstacle(new PVector(o, 0), 230, 310, 210, 520, 0, 0));
+    obstacles1.add(new Obstacle(new PVector(-o, 0), 500, 350, 210, 520, 0, 0));
+    obstacles1.add(new Obstacle(new PVector(o, 0), 230, 390, 210, 520, 0, 0));
+    obstacles1.add(new Obstacle(new PVector(-o, 0), 500, 430, 210, 520, 0, 0));
+    obstacles1.add(new Obstacle(new PVector(o, 0), 230, 470, 210, 520, 0, 0));
     Level level1 = new Level(1, player1, goalArea1, coins1, walls1, obstacles1);
     levels.add(level1);
     
@@ -61,28 +64,28 @@ class Game {
     // Obstacles
     ArrayList<Obstacle> obstacles2 = new ArrayList<Obstacle>();
     // Vertical Obstacles
-    obstacles2.add(new Obstacle(new PVector(0, 2), 120, 345, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, -2), 160, 135, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, 2), 200, 345, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, -2), 240, 135, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, 2), 280, 345, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, -2), 320, 135, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, 2), 360, 345, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, -2), 400, 135, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, 2), 440, 345, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, -2), 480, 135, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, 2), 520, 345, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, -2), 560, 135, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, 2), 600, 345, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, -2), 640, 135, 0, 0, 114, 366, 15));
-    obstacles2.add(new Obstacle(new PVector(0, 2), 680, 345, 0, 0, 114, 366, 15));
+    obstacles2.add(new Obstacle(new PVector(0, o), 120, 345, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, -o), 160, 135, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, o), 200, 345, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, -o), 240, 135, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, o), 280, 345, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, -o), 320, 135, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, o), 360, 345, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, -o), 400, 135, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, o), 440, 345, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, -o), 480, 135, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, o), 520, 345, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, -o), 560, 135, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, o), 600, 345, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, -o), 640, 135, 0, 0, 114, 366));
+    obstacles2.add(new Obstacle(new PVector(0, o), 680, 345, 0, 0, 114, 366));
     // Horizontal Obstacles
-    obstacles2.add(new Obstacle(new PVector(2, 0), 120, 135, 99, 701, 0, 0, 15));
-    obstacles2.add(new Obstacle(new PVector(-2, 0), 680, 175, 99, 701, 0, 0, 15));
-    obstacles2.add(new Obstacle(new PVector(2, 0), 120, 215, 99, 701, 0, 0, 15));
-    obstacles2.add(new Obstacle(new PVector(-2, 0), 680, 255, 99, 701, 0, 0, 15));
-    obstacles2.add(new Obstacle(new PVector(2, 0), 120, 295, 99, 701, 0, 0, 15));
-    obstacles2.add(new Obstacle(new PVector(-2, 0), 680, 345, 99, 701, 0, 0, 15));
+    obstacles2.add(new Obstacle(new PVector(o, 0), 120, 135, 99, 701, 0, 0));
+    obstacles2.add(new Obstacle(new PVector(-o, 0), 680, 175, 99, 701, 0, 0));
+    obstacles2.add(new Obstacle(new PVector(o, 0), 120, 215, 99, 701, 0, 0));
+    obstacles2.add(new Obstacle(new PVector(-o, 0), 680, 255, 99, 701, 0, 0));
+    obstacles2.add(new Obstacle(new PVector(o, 0), 120, 295, 99, 701, 0, 0));
+    obstacles2.add(new Obstacle(new PVector(-o, 0), 680, 345, 99, 701, 0, 0));
     Level level2 = new Level(2, player2, goalArea2, coins2, walls2, obstacles2);
     levels.add(level2);
     
@@ -112,27 +115,27 @@ class Game {
     walls3.add(new Wall(100, 395, 515, 400));
     ArrayList<Obstacle> obstacles3 = new ArrayList<Obstacle>();
     // Horizontal Obstacles
-    obstacles3.add(new Obstacle(new PVector(2, 0), 65, 375, 50, 670, 0, 0, 15));
-    obstacles3.add(new Obstacle(new PVector(-2, 0), 655, 335, 50, 670, 114, 366, 15));
-    obstacles3.add(new Obstacle(new PVector(2, 0), 65, 295, 50, 670, 0, 0, 15));
-    obstacles3.add(new Obstacle(new PVector(-2, 0), 655, 255, 50, 670, 114, 366, 15));
-    obstacles3.add(new Obstacle(new PVector(2, 0), 65, 215, 50, 670, 0, 0, 15));
+    obstacles3.add(new Obstacle(new PVector(o, 0), 65, 375, 50, 670, 0, 0));
+    obstacles3.add(new Obstacle(new PVector(-o, 0), 655, 335, 50, 670, 114, 366));
+    obstacles3.add(new Obstacle(new PVector(o, 0), 65, 295, 50, 670, 0, 0));
+    obstacles3.add(new Obstacle(new PVector(-o, 0), 655, 255, 50, 670, 114, 366));
+    obstacles3.add(new Obstacle(new PVector(o, 0), 65, 215, 50, 670, 0, 0));
     // Vertical Obstacles
-    /*obstacles3.add(new Obstacle(new PVector(0, 2), 65, 215, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, -2), 105, 375, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, 2), 145, 215, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, -2), 185, 375, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, 2), 225, 215, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, -2), 265, 375, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, 2), 305, 215, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, -2), 345, 375, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, 2), 385, 215, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, -2), 425, 375, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, 2), 465, 215, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, -2), 505, 375, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, 2), 545, 215, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, -2), 595, 375, 0, 0, 195, 395, 15));
-    obstacles3.add(new Obstacle(new PVector(0, 2), 635, 215, 0, 0, 195, 395, 15));*/
+    obstacles3.add(new Obstacle(new PVector(0, o), 65, 215, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, -o), 105, 375, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, o), 145, 215, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, -o), 185, 375, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, o), 225, 215, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, -o), 265, 375, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, o), 305, 215, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, -o), 345, 375, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, o), 385, 215, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, -o), 425, 375, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, o), 465, 215, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, -o), 505, 375, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, o), 545, 215, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, -o), 595, 375, 0, 0, 195, 395));
+    obstacles3.add(new Obstacle(new PVector(0, o), 635, 215, 0, 0, 195, 395));
     Level level3 = new Level(3, player3, goalArea3, coins3, walls3, obstacles3);
     levels.add(level3);
     
@@ -154,18 +157,18 @@ class Game {
     walls4.add(new Wall(230, 320, 235, 365));
     walls4.add(new Wall(150, 320, 230, 325));
     ArrayList<Obstacle> obstacles4 = new ArrayList<Obstacle>();
-    obstacles4.add(new Obstacle(new PVector(0, 2), 255, 175, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(0, -2), 295, 345, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(0, 2), 335, 175, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(0, -2), 375, 345, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(0, 2), 415, 175, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(0, -2), 455, 345, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(0, 2), 495, 175, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(0, -2), 535, 345, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(0, 2), 575, 175, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(0, -2), 615, 345, 0, 0, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(1, -1), 255, 175, 235, 635, 155, 365, 15));
-    obstacles4.add(new Obstacle(new PVector(-1, 1), 255, 345, 235, 635, 155, 365, 15));
+    obstacles4.add(new Obstacle(new PVector(0, o), 255, 175, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(0, -o), 295, 345, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(0, o), 335, 175, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(0, -o), 375, 345, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(0, o), 415, 175, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(0, -o), 455, 345, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(0, o), 495, 175, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(0, -o), 535, 345, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(0, o), 575, 175, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(0, -o), 615, 345, 0, 0, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(o, -o), 255, 175, 235, 635, 155, 365));
+    obstacles4.add(new Obstacle(new PVector(-o, o), 255, 345, 235, 635, 155, 365));
     Level level4 = new Level(4, player4, goalArea4, coins4, walls4, obstacles4);
     levels.add(level4);
     
@@ -208,29 +211,29 @@ class Game {
     walls5.add(new Wall(165, 180, 640, 185));
     walls5.add(new Wall(635, 95, 640, 180));
     ArrayList<Obstacle> obstacles5 = new ArrayList<Obstacle>();
-    obstacles5.add(new Obstacle(new PVector(2, 0), 100, 205, 80, 720, 0, 0, 15));
-    obstacles5.add(new Obstacle(new PVector(-2, 0), 700, 245, 80, 720, 0, 0, 15));
-    obstacles5.add(new Obstacle(new PVector(2, 0), 100, 285, 80, 720, 0, 0, 15));
-    obstacles5.add(new Obstacle(new PVector(-2, 0), 700, 325, 80, 720, 0, 0, 15));
-    obstacles5.add(new Obstacle(new PVector(2, 0), 100, 365, 80, 720, 0, 0, 15));
-    obstacles5.add(new Obstacle(new PVector(-2, 0), 700, 405, 80, 720, 0, 0, 15));
-    obstacles5.add(new Obstacle(new PVector(2, 0), 100, 445, 80, 720, 0, 0, 15));
-    obstacles5.add(new Obstacle(new PVector(0, 2), 100, 205, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, -2), 140, 445, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, 2), 180, 205, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, -2), 220, 445, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, 2), 260, 205, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, -2), 300, 445, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, 2), 340, 205, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, -2), 380, 445, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, 2), 420, 205, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, -2), 460, 445, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, 2), 500, 205, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, -2), 540, 445, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, 2), 580, 205, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, -2), 620, 445, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, 2), 660, 205, 0, 0, 185, 465, 15));
-    obstacles5.add(new Obstacle(new PVector(0, -2), 700, 445, 0, 0, 185, 465, 15));
+    obstacles5.add(new Obstacle(new PVector(o, 0), 100, 205, 80, 720, 0, 0));
+    obstacles5.add(new Obstacle(new PVector(-o, 0), 700, 245, 80, 720, 0, 0));
+    obstacles5.add(new Obstacle(new PVector(o, 0), 100, 285, 80, 720, 0, 0));
+    obstacles5.add(new Obstacle(new PVector(-o, 0), 700, 325, 80, 720, 0, 0));
+    obstacles5.add(new Obstacle(new PVector(o, 0), 100, 365, 80, 720, 0, 0));
+    obstacles5.add(new Obstacle(new PVector(-o, 0), 700, 405, 80, 720, 0, 0));
+    obstacles5.add(new Obstacle(new PVector(o, 0), 100, 445, 80, 720, 0, 0));
+    obstacles5.add(new Obstacle(new PVector(0, o), 100, 205, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, -o), 140, 445, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, o), 180, 205, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, -o), 220, 445, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, o), 260, 205, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, -o), 300, 445, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, o), 340, 205, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, -o), 380, 445, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, o), 420, 205, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, -o), 460, 445, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, o), 500, 205, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, -o), 540, 445, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, o), 580, 205, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, -o), 620, 445, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, o), 660, 205, 0, 0, 185, 465));
+    obstacles5.add(new Obstacle(new PVector(0, -o), 700, 445, 0, 0, 185, 465));
     Level level5 = new Level(5, player5, goalArea5, coins5, walls5, obstacles5);
     levels.add(level5);
     
@@ -242,7 +245,7 @@ class Game {
 
   void update(int level) {
     PVector direction = new PVector(0, 0);
-    int v = 5;
+    int v = 1;
     if (up) {
       direction.y = -v;
     }
@@ -266,6 +269,15 @@ class Game {
 
   void draw(int level) {
     levels.get(level - 1).draw();
+    pause.draw();
+  }
+  
+  void handleMouseClick() {
+    if (pause.isMouseClicked()) {
+      background(255);
+      showGame = false;
+      showResetLevel = true;
+    }
   }
 
   void keyPressed() {
