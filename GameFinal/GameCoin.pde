@@ -17,7 +17,7 @@ class Coin {
   }
   
   void collect() {
-    if (!collected) {  // Ensure collect() is only processed if the coin wasn't already collected
+    if (!collected) {  
       System.out.println("Coin collected at position: " + position);
       if (ui.settings.soundOption.checked) {
         soundManager.playSoundEffect("coin");

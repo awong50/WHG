@@ -4,7 +4,7 @@ class Level {
   ArrayList<Coin> coins;
   GoalArea goalArea;
   ArrayList<Wall> walls;
-  ArrayList<Obstacle> obstacles; // List of obstacles
+  ArrayList<Obstacle> obstacles; 
 
   Level(int number, Player player, GoalArea goalArea, ArrayList<Coin> coins, ArrayList<Wall> walls, ArrayList<Obstacle> obstacles) {
     this.number = number;
@@ -64,7 +64,7 @@ class Level {
   }
 
   void draw() {
-    background(200); // Adjust this as needed
+    background(200); 
     goalArea.draw();
     player.draw();
     for (Wall wall : walls) {

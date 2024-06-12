@@ -11,7 +11,7 @@ class Obstacle {
     this.rightBound = rightBound;
     this.topBound = topBound;
     this.bottomBound = bottomBound;
-    radius = 15; // Adjust the radius as needed
+    radius = 15; 
   }
 
   void draw() {
