@@ -1,8 +1,3 @@
-import ddf.minim.*;
-
-Minim minim = new Minim(this);
-SoundManager soundManager = new SoundManager(minim);
-
 class Coin {
   PVector position;
   boolean collected;
@@ -11,7 +6,7 @@ class Coin {
   public Coin(float x, float y) {
     position = new PVector(x, y);
     collected = false;
-    soundManager.addSoundEffect("AHHH", dataPath("haha.mp3"));  
+    soundManager.addSoundEffect("coin", dataPath("coin.wav"));  
   }
   
   void draw() {
@@ -21,15 +16,21 @@ class Coin {
     }
   }
   
-  
   void collect() {
-    System.out.println("Coin collected at position: " + position);
-    soundManager.playSoundEffect("AHHH");
-    collected = true;
+    if (!collected) {  // Ensure collect() is only processed if the coin wasn't already collected
+      System.out.println("Coin collected at position: " + position);
+      soundManager.playSoundEffect("coin");
+      collected = true;
+      soundManager.addSoundEffect("coin", dataPath("coin.wav")); 
+    }
   }
   
   boolean isCollected() {
     return collected;
   }
   
+  void reset() {
+    collected = false;  
+    soundManager.addSoundEffect("coin", dataPath("coin.wav")); 
+  }
 }

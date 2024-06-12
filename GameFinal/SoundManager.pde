@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import ddf.minim.*;
-
 class SoundManager {
   Minim minim;
   HashMap<String, SoundEffect> soundEffects;
@@ -27,6 +24,15 @@ class SoundManager {
     SoundEffect soundEffect = soundEffects.get(name);
     if (soundEffect != null) {
       soundEffect.stop();
+    } else {
+      println("Sound effect '" + name + "' not found.");
+    }
+  }
+
+  void pauseSoundEffect(String name) {
+    SoundEffect soundEffect = soundEffects.get(name);
+    if (soundEffect != null) {
+      soundEffect.pause();
     } else {
       println("Sound effect '" + name + "' not found.");
     }

@@ -13,6 +13,7 @@ class Player {
     coinCount = 0;
     radius = 20;
     this.col = col;
+    soundManager.addSoundEffect("death", dataPath("death.wav"));  
   }
   
   void draw() {
@@ -54,9 +55,13 @@ class Player {
     }
   }
   
-  void resetPosition(float x, float y) {
+  void reset(float x, float y) {
+    soundManager.playSoundEffect("death");
     position.set(x, y);
+    soundManager.addSoundEffect("death", dataPath("death.wav"));  
   }
+  
+  
 
   void stop() {
     velocity.set(0, 0);

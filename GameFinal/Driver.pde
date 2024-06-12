@@ -7,6 +7,10 @@ boolean showSettings = false;
 boolean showCredits = false;
 boolean showGame = false;
 int currentLevel; // Keep track of the current level
+import ddf.minim.*;
+
+Minim minim = new Minim(this);
+SoundManager soundManager = new SoundManager(minim);
 
 void setup() {
   size(800, 600);
