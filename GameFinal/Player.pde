@@ -60,7 +60,6 @@ class Player {
       soundManager.playSoundEffect("death");
     }
     position.set(x, y);
-    soundManager.addSoundEffect("death", dataPath("death.wav"));  
   }
   
   

@@ -14,7 +14,7 @@ class Button {
     shape = str;
     backgroundColor = c1;
     labelColor = c2;
-    soundManager.addSoundEffect("boop", dataPath("select.wav"));  
+    soundManager.addSoundEffect("boop", dataPath("select.mp3"));  
   }
   
   void draw() {
@@ -48,8 +48,7 @@ class Button {
   public boolean isMouseClicked() {
     if (ui.settings.soundOption.checked) {
       soundManager.playSoundEffect("boop");
-    }
-    soundManager.addSoundEffect("boop", dataPath("select.wav"));  
+    } 
     return isMouseOver() && mousePressed && mouseButton == LEFT;
 
   }
