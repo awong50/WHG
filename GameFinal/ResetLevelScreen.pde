@@ -21,7 +21,9 @@ class ResetLevel {
       background(255);
       showResetLevel = false;
       showGame = true;
-      soundManager.playSoundEffect("background");
+      if (ui.settings.ambient.checked) {
+        soundManager.playSoundEffect("background");
+      }
     }
     if (status(toLevelSelect)) {
       background(255);

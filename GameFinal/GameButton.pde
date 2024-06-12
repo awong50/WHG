@@ -46,7 +46,9 @@ class Button {
   }
   
   public boolean isMouseClicked() {
-    soundManager.playSoundEffect("boop");
+    if (ui.settings.soundOption.checked) {
+      soundManager.playSoundEffect("boop");
+    }
     soundManager.addSoundEffect("boop", dataPath("select.wav"));  
     return isMouseOver() && mousePressed && mouseButton == LEFT;
 

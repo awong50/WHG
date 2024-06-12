@@ -15,7 +15,14 @@ class Game {
 
     // Level 1
     ArrayList<Coin> coins1 = new ArrayList<Coin>();
-    coins1.add(new Coin(85, 375));
+    coins1.add(new Coin(235, 220));
+    coins1.add(new Coin(220, 220));
+    coins1.add(new Coin(235, 235));
+    coins1.add(new Coin(220, 235));
+    coins1.add(new Coin(510, 490));
+    coins1.add(new Coin(495, 490));
+    coins1.add(new Coin(510, 475));
+    coins1.add(new Coin(495, 475));
     GoalArea goalArea1 = new GoalArea(560, 50, 100, 360, color(0, 255, 0));
     ArrayList<Wall> walls1 = new ArrayList<Wall>();
     walls1.add(new Wall(50, 300, 140, 310));
@@ -243,7 +250,9 @@ class Game {
 
   void loadLevel(int level) {
     levels.get(level - 1).load();
-    soundManager.playSoundEffect("background");
+    if (ui.settings.ambient.checked) {
+      soundManager.playSoundEffect("background");
+    }
   }
 
   void update(int level) {

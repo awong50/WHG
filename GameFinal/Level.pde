@@ -48,8 +48,12 @@ class Level {
 
     if (goalArea.allCoinsCollected && goalArea.collisionCheck(player)) {
       println("Goal Reached");
-      soundManager.playSoundEffect("completeLevel");
-      soundManager.pauseSoundEffect("background");
+      if (ui.settings.soundOption.checked) {
+        soundManager.playSoundEffect("completeLevel");
+      }
+      if (ui.settings.ambient.checked) {
+        soundManager.pauseSoundEffect("background");
+      }
       goalArea.deactivate();
       showLevelSelect = true; 
     }
