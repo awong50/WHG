@@ -56,7 +56,9 @@ class Player {
   }
   
   void reset(float x, float y) {
-    soundManager.playSoundEffect("death");
+    if (ui.settings.soundOption.checked) {
+      soundManager.playSoundEffect("death");
+    }
     position.set(x, y);
     soundManager.addSoundEffect("death", dataPath("death.wav"));  
   }

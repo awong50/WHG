@@ -23,6 +23,7 @@ void setup() {
 }
 
 void draw() {
+  System.out.println(mouseX + " | " + mouseY);
   if (showMainMenu) {
     background(200);
     ui.showMainMenu();
